@@ -16,9 +16,9 @@ import javafx.stage.Stage;
  * so write it in code instead of FXML.
  *
  */
-public class CounterView implements java.util.Observer {
+public class CounterView extends Stage implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
-	private Stage stage;
+//	private Stage stage;
 	/** a counter to show value of */
 	private Counter counter;
 	/** the label that shows the counter value. */
@@ -34,7 +34,7 @@ public class CounterView implements java.util.Observer {
 	}
 	
 	private void initComponents() {
-		stage = new Stage();
+//		stage = new Stage();
 		// components and containers for our window
 		HBox root = new HBox();
 		//TODO Set some padding around the HBox
@@ -55,14 +55,15 @@ public class CounterView implements java.util.Observer {
 		// Create a Scene using HBox as the root element
 		Scene scene = new Scene(root);
 		// show the scene on the stage
-		stage.setScene(scene);
-		stage.setTitle("Count");
-		stage.sizeToScene();
+//		we use stage.setScene(scene); before 
+		this.setScene(scene);
+		this.setTitle("Count");
+		this.sizeToScene();
 	}
 	
 	/** Show the window and update the counter value. */
 	public void run() {
-		stage.show();
+		this.show();
 		displayCount();
 	}
 	
